@@ -1,0 +1,6 @@
+{
+  "loopback-component-explorer": {
+    "mountPath": "/holista-doc",
+    "generateOperationScopedModels": true
+  }
+}

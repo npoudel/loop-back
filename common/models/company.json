@@ -1,0 +1,76 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "name": "Company",
+  "description": "A Company model representing our company.",
+  "plural": "company",
+  "replaceOnPOST": false,
+  "properties": {
+    "id": {
+      "type": "number",
+      "field": "id",
+      "autoIncrement": true,
+      "primaryKey": true
+    },
+    "parentId": {
+      "type": "number",
+      "field": "parent_id"
+    },
+    "type": {
+      "type": "STRING",
+      "field": "type"
+    },
+    "name": {
+      "type": "STRING",
+      "field": "name"
+    },
+    "email": {
+      "type": "STRING",
+      "field": "email"
+    },
+    "phone": {
+      "type": "number",
+      "field": "phone"
+    },
+    "addressline1": {
+      "type": "STRING",
+      "field": "addressline1"
+    },
+    "addressline2": {
+      "type": "STRING",
+      "field": "addressline2"
+    },
+    "city": {
+      "type": "STRING",
+      "field": "city"
+    },
+    "state": {
+      "type": "STRING",
+      "field": "state"
+    },
+    "zip": {
+      "type": "STRING",
+      "field": "zip"
+    }
+  },
+  "replaceOnPUT": true,
+  "mixins": {
+    "DisableAllMethods": {
+      "hide": [
+        "exists", "upsertWithWhere","findOne","count", "createChangeStream" ,"patchOrCreate", "update","replaceById","prototype.patchAttributes"
+      ]
+    }
+  }
+}

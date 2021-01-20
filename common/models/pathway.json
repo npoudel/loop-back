@@ -1,0 +1,58 @@
+{
+    "_meta": {
+      "sources": [
+        "loopback/common/models",
+        "loopback/server/models",
+        "../common/models",
+        "./models"
+      ],
+      "mixins": [
+        "loopback/common/mixins",
+        "loopback/server/mixins",
+        "../common/mixins",
+        "./mixins"
+      ]
+    },
+    "name": "Pathway",
+    "description": "A Pathway model representing our pathway.",
+    "plural": "pathway",
+    "replaceOnPOST": false,
+    "properties": {
+      "id": {
+        "type": "number",
+        "field": "id",
+        "autoIncrement": true,
+        "primaryKey": true
+      },
+      "name": {
+        "type": "STRING",
+        "field": "name"
+      },      
+      "description": {
+        "type": "STRING",
+        "field": "description"
+      },      
+      "createdDate": {
+        "type": "Date",
+        "field": "created_date"
+      },
+      "createdBy":{
+        "type":"number",
+        "field":"created_by"
+      },
+      "updatedDate": {
+        "type": "Date",
+        "field": "updated_date"
+      },
+      "updatedBy":{
+        "type":"number",
+        "field":"updated_by"
+      }},      
+    "mixins": {
+      "DisableAllMethods": {
+        "hide": [
+            "exists", "upsertWithWhere","findOne","count", "createChangeStream" ,"patchOrCreate", "update","replaceById","prototype.patchAttributes","findById","deleteById"
+        ]
+      }
+    }
+  }
